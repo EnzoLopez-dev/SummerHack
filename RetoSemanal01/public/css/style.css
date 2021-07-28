@@ -1,0 +1,38 @@
+nav p{
+    text-align: left;
+    font-size: 14px;
+    color: grey;
+}
+body{
+    background-color: black;
+    color: green;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    text-align: center;
+}
+.portada{
+    color: yellow;
+    font-weight: 400;
+    line-height: 32px;
+    font-size: 26px;
+}
+strong{
+    color: red;
+    font-weight: 700;
+}
+i{
+    color: yellow;
+    font-weight: 700;
+}
+#letra{
+    font-weight: 200;
+}
+.estribillo{
+    color: greenyellow;
+    font-weight: 400;
+}
+footer p{
+    text-align: left;
+    font-size: 14px;
+    color: grey;
+}
