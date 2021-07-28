@@ -1,0 +1,174 @@
+/*CLASES GENÉRICAS*/
+.centrar {
+  text-align: center;
+}
+body {
+  background-color: #a4f1fc;
+  color: #0b1340;
+  font-family: "Gorditas", cursive;
+}
+#marco {
+  margin: auto;
+  width: 400px;
+  height: 650px;
+  border: 5px solid black;
+  border-radius: 30px;
+}
+@media only screen and (max-width: 576px) {
+  #marco {
+    border: none;
+  }
+}
+.dn {
+  display: none;
+}
+.db {
+  display: block;
+}
+.oh {
+  overflow: scroll;
+}
+
+/*globales*/
+.btncustom {
+  background-color: #1337d4;
+  color: #ffffff;
+  border: none;
+  transition: 200ms;
+}
+.btncustom:hover {
+  background-color: #27e25f;
+  color: #000000;
+}
+.sec {
+  height: 640px;
+  width: 390px;
+}
+
+.h3custom {
+  color: #1512cc;
+}
+
+/*Pantalla principal*/
+#ppal__titulo {
+  margin-top: 10px;
+  font-size: 50px;
+}
+
+#ppal__img {
+  width: 150px;
+  height: 150px;
+  border-radius: 20%;
+  box-shadow: #313131;
+  margin-bottom: 10px;
+}
+@keyframes filter {
+  from {
+    filter: contrast(100%);
+  }
+  to {
+    filter: contrast(200%);
+  }
+}
+
+#ppal__ul {
+  max-height: 100px;
+}
+
+.btn-ver {
+  float: right;
+}
+
+/*Carga*/
+
+#carga__img {
+  width: 200px;
+  height: 200px;
+  margin-top: 150px;
+  border-radius: 50%;
+  animation: 3s rotate reverse infinite;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*Cartas*/
+#cartas__salida {
+  float: right;
+}
+#cartas__carrucont {
+  padding-bottom: 40px;
+  margin-bottom: 0;
+}
+.card-custom {
+  background-color: #9dcfff;
+  border: none;
+  border-radius: 10px;
+}
+#cartas__btncontinuar {
+  position: relative;
+  float: right;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+#cartas__btnmodalsec {
+  position: relative;
+  float: right;
+  border-radius: 50%;
+  margin-top: 5px;
+}
+.cartas__btnmodal {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+
+.cartas__miniatura {
+  border-radius: 50%;
+  position: relative;
+  float: right;
+  height: 50px;
+  width: 100px;
+}
+.carousel-indicators li {
+  text-indent: 0px;
+  border-top: none;
+}
+
+/*MATCH*/
+#match {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.match__parte {
+  height: 300px;
+}
+#match__h1 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.match__row {
+  margin-bottom: 40px;
+}
+.match__carta {
+  border-radius: 50%;
+  height: 70px;
+  width: 70px;
+}
+.match {
+  font-size: 70px;
+  margin-bottom: 0;
+}
+.match__botonera {
+  margin-top: 50px;
+}
+
+#match__si {
+  color: #ec1616;
+}
+#match__no {
+  color: #ec1616;
+}

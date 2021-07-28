@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Hola Jony!! perdon por la mala eleccion de imagenes, espero te guste el horoscopo!!-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peluca sabe</title>
+    <link rel="icon" type="image/png" href="img/horoscopo.png"/>
+    <!-- Descripcion -->
+    <meta name="description" content="Cuarto reto semanal del SummerHack 2" />
+    <meta name="keywords" content="SummerHack, reto semanal, html, css, js, responsive, bootstrap" />
+    <meta name="author" content="Enzo Lopez" />
+    <meta name="copyright" content="Peluca sabe" />
+    <!-- ROBOTS-->
+    <meta name="robots" content="index follow" />
+    <!--DATA Facebook-->
+    <meta property="og:title" content="Peluca sabe #SummerHack2021" />
+    <meta property="og:description" content="Reto semanal 4 by Enzo Lopez." />
+    <meta property="og:type" content="Reto semanal 4" />
+    <meta property="og:image" content="images/metaFb.jpeg" />
+    <meta property="og:url" content="https://pelucamatch.web.app/" />
+    <!--DATA Twitter-->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="Enzo Lopez" />
+    <meta property="og:url" content="https://pelucamatch.web.app/" />
+    <meta property="og:title" content="Peluca sabe #SummerHack2021" />
+    <meta property="og:description" content="Reto semanal 4 by Enzo Lopez." />
+    <meta property="og:image" content="https://pelucamatch.web.app/images/metaTw.png" />
+    <!--FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Gorditas&display=swap" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <!-- Css -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div id="marco">
+  <section class="sec" id="ppal">
+    <div class="container text-center">
+      <h1 class="h1custom" id="ppal__titulo">Peluca sabe</h1>
+      <img src="img/principal.png" alt="" class="img-fluid" id="ppal__img">
+      <div class="mb-3">
+        <label for="ppal__input1" class="form-label">Jugador/a 1</label>
+        <input type="text" class="form-control inputcustom" id="ppal__input1" placeholder="Ingresá el nombre">
+      </div>
+      <div class="mb-3">
+        <label for="ppal_input2" class="form-label">Jugador/a 2</label>
+        <input type="text" class="form-control inputcustom" id="ppal__input2" placeholder="Ingresá el nombre">
+      </div>
+      <button type="button" class="btn btn-primary btn-lg btncustom" id="ppal__btn">JUGAR</button>
+    </div>
+    <div class="text-center">
+      <h3 class="h3custom dn" id="ppal__subtitulo">Juegos anteriores</h3>
+    </div>
+    <ul class="list-group" id="ppal__ul">
+      
+    </ul>
+  </section>
+  <section class="sec dn" id="carga">
+    <div class="container text-center">
+      <img src="img/cargando.jpg" alt="" class="img-fluid" id="carga__img" style="filter: sepia(20%)">
+      <h1 class="h1custom">Peluca está adivinando su posible match...</h1>
+    </div>
+  </section>
+  <section class="sec dn" id="cartas" >
+    <div class="container">
+    <div class="text-center">
+      <button type="button" class="btn btn-primary btncustom" data-bs-toggle="modal" data-bs-target="#modalInicial" id="cartas__btncontinuar">
+        X
+      </button>
+      <button type="button" class="btn btn-primary btncustom" data-bs-toggle="modal" data-bs-target="#modalInicial" id="cartas__btncontinuar"> 
+        X
+      </button>
+      <h1 class="h1custom">Resultados</h1>
+      <h3 class="h3custom" id="cartas__sub"></h3>
+      <!--carrusel-->
+      <div id="carouselExampleSlidesOnly" class="carousel slide" data-interval="false">
+        <div class="carousel-inner" id="cartas__carrucont">          
+        </div>
+        <ol class="carousel-indicators" id="cartas__ol">
+        </ol>
+      </div>
+    </div>   
+<!-- Modal -->
+<div class="modal fade" id="modalInicial" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="container text-center align-items-center">
+          <button type="button" class="btn btn-primary btn-lg btncustom cartas__btnmodal" id="cartas__btnmodal1" data-bs-dismiss="modal">Calcular match entre jugadores/as</button>
+          <button type="button" class="btn btn-primary btn-lg btncustom cartas__btnmodal" id="cartas__btnmodal2" data-bs-dismiss="modal">Volver a adivinar el futuro</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+  </section>
+  <section class="sec dn" id="match">
+    <div class="container text-center">
+      <div class="match__parte">
+        <h1 class="h1custom">Resultados</h1>
+      <h3 class="h3custom">Jugador/a 1</h3>
+      <div class="row match__row" id="match__row1">
+      </div>
+      <h3  class="h3custom">Jugador/a 2</h3>
+      <div class="row match__row" id="match__row2">
+      </div>
+      </div>
+      <div class="match__parte">
+      <h1 class="h1custom" id="match__h1">¿Match?</h1>
+      <h1 class="match dn" id="match__si">SAPEEE</h1>
+      <h1 class="match dn" id="match__no">NO :c</h1>
+      <div class="row match__botonera">
+        <div class="col-6"><button type="button" class="btn btn-primary btn-lg btncustom" id="match__btnguardar">Guardar</button></div>
+        <div class="col-6"><button type="button" class="btn btn-primary btn-lg btncustom" id="match__btncerrar">Cerrar</button></div>
+      </div>
+    </div>
+    </div> 
+  </section>
+</div>
+<script src="js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>
