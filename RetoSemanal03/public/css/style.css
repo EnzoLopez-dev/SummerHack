@@ -1,0 +1,247 @@
+html {
+    min-height: 100%;
+    position: relative;
+}
+/* Body */
+body{
+    font-family: 'Akaya Telivigala', cursive;
+    width: 100%;
+    color: #212121;
+    background: rgb(144, 224, 239);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: rgb(144, 224, 239);
+    height: 80vh;
+}
+/* Header */
+header{
+    width: 100%;
+    height: 80px;
+    background: rgb(0, 119, 182);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+header p{
+    color: white;
+    margin: 10px;
+    font-size: 20px;
+}
+header p img{
+    width: 40px;
+    margin: 10px;
+}
+header a {
+    text-decoration: none;
+}
+ /* Pop up */ 
+#btnCarga{
+    background: rgb(3, 4, 94);
+    border-radius: 200px;
+    color: white;
+    font-size: 25px;
+
+    height: 10vh;
+    width: 70px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    margin-bottom:50px;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+/*Pantalla Vacia*/
+#pantallaVacio__titulo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.pantallaVacio__emoji{
+    width: 70%;
+}
+/*Pantalla Lista*/
+#pantallaLista{
+    width: 100%;
+}
+.pantallaLista__icono{
+	width: 40px;
+	margin-right: 8px;
+}
+.pantallaListado__list{
+    padding: 10px;
+    margin: 10px;
+    background:rgb(196, 255, 249);
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    border: 2px solid #333;
+    font-size: 25px;
+}
+/*Pantalla Detalle*/
+#pantallaDetalle{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    height: 80vh;
+    padding: 20px;
+    text-align: center;
+}
+.pantallaDetalle__icono{
+	width: 100px;
+    max-width: 250px;
+    max-height: 250px;
+    padding: 20px;
+	margin: 8px;
+}
+#pantallaDetalleArticulo{
+    font-size: 50px;
+    width: 100%;
+}
+#pantallaDetalleDescripcion{
+    font-size: 25px;
+    width: 100%; 
+}
+#pantallaDetalleCerrar{
+    width: 40%;
+    padding: 5px;
+    margin: 10px;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 10px;
+    background: rgb(0, 119, 182);
+    font-size: 20px;
+    color: #e9e9e9;
+    text-decoration: none;
+    box-shadow: 1px 1px 1px 0.5px rgba(0, 0, 0, 1);
+}
+#pantallaCargaDesktop, #pantallaLista, #pantallaDetalle {
+    display: none;
+}
+
+
+/*Footer*/
+footer{
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    bottom: 0;
+    background: rgb(202, 240, 248);
+}
+footer p{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 15px;
+    font-size: 20px;
+    color: #333;
+}
+/* Media Queries*/
+/* Desktop */
+@media only screen and (min-width: 1280px){
+    body{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #btnCarga{
+        display: none;
+    }
+    .pantallaDetalle{
+        width: 80%;
+        text-align: center;
+    }
+    #pantallaCargaDesktop{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 30%;
+        border-right: 1px solid black;
+        height: 80vh;
+    }
+    .divDesktop #desktopProducto{
+        width: 250px;
+        margin-bottom: 10px;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .divDesktop #desktopIcono{
+        width:60%;
+        margin-bottom: 10px;
+    }
+    .divDesktop #desktopDescripcion{
+        width: 250px;
+        margin-bottom: 10px;
+    }
+    .container{
+        width: 70%;
+    }
+    .divDesktop{
+        display: flex;
+        flex-wrap: wrap;
+        height: 80vh;
+        margin-top: 10px;
+    }
+    #desktopAdd{
+        margin-top: 30px;
+        float: right;
+        box-shadow: 3px 4px 10px 0px rgb(0 0 0 / 0.2);
+    }
+    .popupContent__label{
+        padding: 5px;
+        font-size: 25px;
+    }
+    .popupContent__producto, .popupContent__categoria, .popupContent__descripcion{
+        font-size: 15px;
+    }
+
+
+    .pantallaDetalle{
+        width: 70%;
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        background: rgb(144, 224, 239);
+        height: 80vh;    
+    }
+
+    #pantallaLista{
+        width: 65%;
+        margin: 5px;
+        padding: 5px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+    }
+
+    #pantallaLista::-webkit-scrollbar-thumb {
+        background-color: rgb(144, 224, 239);
+        border-radius: 20px;
+        border: 2px solid #242424;
+    }
+    #pantallaLista::-webkit-scrollbar-track {
+        border-radius: 10px;  
+    }
+    #pantallaListaCompra{
+        flex-wrap: column wrap;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+}

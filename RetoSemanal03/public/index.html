@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Hola Jony y gente del stream!! El nombre es en honor a la epoca de hacer compras en cuarentena, que teniamos que anotar todo lo que teniamos que llevar del mercadito, saludos Enzo.
+	PD: prometo mejorar mi paleta de colores c: -->
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="images/tienda.svg" type="image/png" />
+	<title>CuarenCompra</title>
+	<!-- Descripcion -->
+	<meta name="description" content="Tercer reto semanal del SummerHack 2 sobre el JS y responsive" />
+    <meta name="keywords" content="SummerHack, reto semanal, html, css, js, responsive, bootstrap" />
+    <meta name="author" content="Enzo Lopez" />
+    <meta name="copyright" content="CuarenCompra" />
+    <!-- ROBOTS-->
+    <meta name="robots" content="index follow" />
+    <!--DATA Facebook-->
+    <meta property="og:title" content="CuarenCompra #SummerHack2021" />
+    <meta property="og:description" content="Reto semanal 3 con JS y responsive by Enzo Lopez." />
+    <meta property="og:type" content="Reto semanal 3" />
+    <meta property="og:image" content="images/metaFb.jpeg" />
+    <meta property="og:url" content="https://tiendacuarencompra.web.app" />
+    <!--DATA Twitter-->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:creator" content="Enzo Lopez" />
+    <meta property="og:url" content="https://tiendacuarencompra.web.app" />
+    <meta property="og:title" content="CuarenCompra #SummerHack2021" />
+    <meta property="og:description" content="Reto semanal 3 con JS y responsive by Enzo Lopez." />
+    <meta property="og:image" content="https://tiendacuarencompra.web.app/images/metaTw.png" />
+	<!--FONTS-->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Akaya+Telivigala&display=swap" rel="stylesheet">
+	<!-- Bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+	<!-- Css -->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<header>
+		<a href="index.html"> <p> <img src="images/mercado.svg" alt="" id="imagenHeader"> CuarenCompra </p> </a>
+	</header>
+	<!-- Desktop -->
+	<div class="divDesktop">  
+		<section id="pantallaCargaDesktop">
+			<div class="mb-3">
+				<label for="desktopProducto" class="form-label popupContent__label">Agregar producto</label>
+				<input type="text" class="form-control popupContent__producto" id="desktopProducto" placeholder="carne/yogurt/banana/chocolate/etc." required>
+			</div>
+			<label for="desktopIcono" class="form-label popupContent__label">Categoría</label>
+			<select class="form-select popupContent__categoria" id="desktopIcono" required>
+				<option value="images/varios.svg">🖼️ Varios</option>
+				<option value="images/bebidas.svg">🍾 Bebidas</option>
+				<option value="images/carne.svg">🥩 Carnes</option>
+				<option value="images/golosinas.svg">🍫 Golosinas</option>
+				<option value="images/desinfectante.svg">🧼 Higiene personal</option>
+				<option value="images/lacteos.svg">🥛 Lacteos</option>
+				<option value="images/verduras.svg">🥦🍒 Verduras/Frutas</option>
+			</select>
+			<div class="mt-3">
+				<label for="desktopDescripcion" class="form-label popupContent__label">Descripción</label>
+				<textarea class="form-control popupContent__descripcion" id="desktopDescripcion" rows="3"></textarea>
+			</div>
+			<button type="btnCarga" class="btn btn-primary" id="desktopAdd"> Agregar y guardar </button>
+		</section>
+		
+		<!-- Pantalla Vacia -->
+		<section id="pantallaVacio" class="container">
+			<h1 id="pantallaVacio__titulo"> Aun no tenes productos para comprar</h1>
+			<img src="images/icono.png" alt="Imagen de homero con hambre" class="pantallaVacio__emoji">
+		</section>
+		
+		<!-- Pantalla con listado de productos -->
+		<section id="pantallaLista">
+			<ul class="list-group" id="pantallaListaCompra">
+			</ul>
+		</section>
+		
+		<!-- Pantalla de detalle de productos -->
+		<section id="pantallaDetalle" class="pantallaDetalle">
+			<img src="images/bebidas.svg" alt="" class="pantallaDetalle__icono" id="pantallaDetalleIcono">
+			<h1 id="pantallaDetalleArticulo">  </h1>
+			<p id="pantallaDetalleDescripcion">  </p>
+			<button id="pantallaDetalleCerrar"> Volver al listado </button>
+		</section>
+		
+		<!-- Boton Add Modal -->
+		<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#pantallaCarga" id="btnCarga">
+			Add
+		</button>
+
+		<!-- Modal -->
+		<div class="modal fade" id="pantallaCarga" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="exampleModalLabel">Agregar compra</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+				<div class="mb-3">
+					<label for="pantallaCargaProducto" class="form-label">Ingresa un producto</label>
+					<input type="text" class="form-control" id="pantallaCargaProducto" placeholder="carne/yogurt/banana/chocolate/etc." required>
+				</div>
+				<div class="mb-3">
+					<label for="pantallaCargaIcono" class="form-label">Selecciona una categoria</label>
+					<select id="pantallaCargaIcono" class="form-select" required>
+						<option value="images/varios.svg">🖼️ Varios</option>
+						<option value="images/bebidas.svg">🍾 Bebidas</option>
+						<option value="images/carne.svg">🥩 Carnes</option>
+						<option value="images/golosinas.svg">🍫 Golosinas</option>
+						<option value="images/desinfectante.svg">🧼 Higiene personal</option>
+						<option value="images/lacteos.svg">🥛 Lacteos</option>
+						<option value="images/verduras.svg">🥦🍒 Verduras/Frutas</option>
+					</select>
+				</div>
+				<div class="mb-3">
+					<label for="pantallaCargaDescripcion" class="form-label">Descripción de la compra</label>
+					<textarea class="form-control" id="pantallaCargaDescripcion" rows="3"></textarea>
+				</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+					<button type="button" class="btn btn-primary" id="pantallaCargaAdd">Agregar y Guardar</button>
+				</div>
+			</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<p> © Enzo Lopez #SummerHack2021 </p>
+	</footer>
+	
+	<!-- Javascript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+	<script src="script/main.js"></script>
+</body>
+</html>
